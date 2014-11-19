@@ -1,4 +1,4 @@
 #!/bin/bash
 cd `dirname $0`
 cd ..
-python main.py
+python3 main.py
