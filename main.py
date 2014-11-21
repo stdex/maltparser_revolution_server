@@ -34,6 +34,7 @@ def parse_input(X_data, ka, encoder, model_ka_RF):
     val = model_ka_RF.predict(X_data_transform)
     return val
 
+ka, encoder, model_ka_RF = initialize_sklearn_model()
 
 @app.route("/")
 def hello():
@@ -51,7 +52,6 @@ def send_data(req):
             for row in csv_r:
                 malt_data.append([float(x)+1 for x in row])
 
-            ka, encoder, model_ka_RF = initialize_sklearn_model()
             # обрабатываем входные значения моделями sklearn
             val = parse_input(malt_data, ka, encoder, model_ka_RF)
             return '%s' % val
