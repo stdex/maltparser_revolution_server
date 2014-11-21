@@ -19,11 +19,10 @@ from sklearn.kernel_approximation import Nystroem
 import datetime
 app = Flask(__name__)
 
-#model_1
 def initialize_sklearn_model():
-    ka = joblib.load("models/model_02/ka.pkl")
-    encoder = joblib.load("models/model_02/encoder.pkl")
-    model_ka_RF = joblib.load("models/model_02/RandomForestClassifier.pkl")
+    ka = joblib.load("models/model_win/ka.pkl")
+    encoder = joblib.load("models/model_win/encoder.pkl")
+    model_ka_RF = joblib.load("models/model_win/RandomForestClassifier.pkl")
     return ka, encoder, model_ka_RF
 
 def parse_input(X_data, ka, encoder, model_ka_RF):
